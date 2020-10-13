@@ -1,8 +1,8 @@
 # Terraflops Terraform Module
  
-### Module name
+### AWS Route53 CNAME
 
-Insert module description
+Allows the creation of AWS Route53 CNAME records.
 
 #### Example usage
 
@@ -17,3 +17,29 @@ module "example" {
   ]
 }
 ```
+
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| hosted\_zone\_id | The ID of the hosted zone to contain this record. | `string` | n/a | yes |
+| name | The name of the record. | `string` | n/a | yes |
+| records | A string list of records. | `set(string)` | n/a | yes |
+| ttl | The TTL of the record. | `number` | `60` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| fqdn | The FQDN built using the zone domain and name. |
+
